@@ -44,6 +44,8 @@ async function getSongs(folder) {
         })
 
     });
+
+    return songs;
 }
 
 const playmusic = (track, pause = false) => {
@@ -113,6 +115,7 @@ async function displayAlbums() {
             songs = await getSongs(`assests/audio/${item.currentTarget.dataset.folder}`);
             // console.log(`${item.currentTarget.dataset.folder}`)
             console.log(songs)
+            playmusic(songs[0])
 
         })
     });
